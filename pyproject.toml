@@ -31,4 +31,4 @@ testpaths = ["tests"]
 pythonpath = ["src"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/dist_train"]
+packages = ["src/datasets"]

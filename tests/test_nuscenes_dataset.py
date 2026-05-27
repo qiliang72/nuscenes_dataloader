@@ -1,6 +1,6 @@
 from torch.utils.data import DataLoader
 
-from dist_train.datasets import NuScenesDataset
+from datasets import NuScenesDataset
 
 
 def test_dataset_length_matches_sample_count() -> None:

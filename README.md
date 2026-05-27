@@ -21,12 +21,25 @@ uv python install 3.12
 uv sync --dev
 ```
 
-项目默认使用 CPU 版 PyTorch，后续如果需要 GPU/CUDA，可以再根据机器环境调整 `pyproject.toml` 中的 PyTorch index。
+项目默认使用 CPU 版 PyTorch。当前依赖版本为 `torch==2.4.0` 和 `numpy==1.26.4`，后续如果需要 GPU/CUDA，可以再根据机器环境调整 `pyproject.toml` 中的 PyTorch index。
+
+## 项目结构
+
+```text
+src/
+  datasets/
+    nuscenes_dataset.py
+  train_loop.py
+tests/
+  test_nuscenes_dataset.py
+```
+
+`src` 下面已经去掉额外的 `dist_train` 目录层级，便于先专注学习 Dataset 和 DataLoader 的核心用法。
 
 ## 运行 demo
 
 ```powershell
-uv run python -m dist_train.train_loop
+uv run python src/train_loop.py
 ```
 
 你会看到 `DataLoader` 按 batch 循环输出 mock 样本。这个过程展示了：
